@@ -1,5 +1,5 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 body {
     margin: 0;
@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    user-select: none;
     background-color: black;
 }
 
@@ -66,13 +66,13 @@ button {
   height: 4.5rem;
 }
 
-.special-button {
+.special-btn {
     background-color: #C0C0C0;
     color: black;
     font-size: 1.5rem;
 }
 
-.operator-button {
+.op-btn {
     background-color: #FF9933;
     color: white;
     font-size: 2.5rem;
