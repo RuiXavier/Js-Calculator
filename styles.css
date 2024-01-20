@@ -25,14 +25,29 @@ body {
     border-color: red;
 }
 
+.screen {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.calculations {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color:white;
+    text-align: start;
+}
+
 .display {
     font-family: 'Poppins', sans-serif;
     display: flex;
     color: white;
-    margin-left: auto;
+    
     margin-top: auto;
 
     font-size: 3rem;
+    text-align: end;
+    min-height: 4rem;
 }
 
 .btnsDiv {
@@ -47,7 +62,6 @@ body {
     align-items: center;
     gap: 0.4rem;
 }
-
 
 
 button {
@@ -66,13 +80,13 @@ button {
   height: 4.5rem;
 }
 
-.special-btn {
+.spec-row button {
     background-color: #C0C0C0;
     color: black;
     font-size: 1.5rem;
 }
 
-.op-btn, .eq-btn {
+.calc-btn:last-child {
     background-color: #FF9933;
     color: white;
     font-size: 2.5rem;
@@ -84,6 +98,13 @@ button {
     border-radius: 4em;
     text-align: left;
     padding-left: 1.7rem;
+}
+
+#backspace {
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 0.7rem;
+    font-weight: 500;
 }
 
 
