@@ -8,6 +8,18 @@ const calcs = document.querySelector('.calculations');
 
 const display = document.querySelector('.display');
 
+const addBtn = document.querySelector('#add');
+const subBtn = document.querySelector('#sub');
+const mulBtn = document.querySelector('#mul');
+const divBtn = document.querySelector('#div');
+
+const clearBtn = document.querySelector('#AC');
+const signChangeBtn = document.querySelector('#signal-change');
+const backspaceBtn = document.querySelector('#backspace');
+
+const decPointBtn = document.querySelector('#dec-point');
+decPointBtn.disabled = false;
+
 function buttonPress(content){
     if(isNaN(content))
         symbolHandler(content);
@@ -63,7 +75,11 @@ function symbolHandler(symbol){
             calcBuffer = '';
             break;
         case ',':
-            buffer += '.';
+            if(decPointBtn.disabled === false){
+                decPointBtn.disabled = true;
+                buffer += '.';
+                calcBuffer += '.';
+            }
             break;
         case '=':
             if(operator === null)
@@ -80,6 +96,7 @@ function symbolHandler(symbol){
         case '−':
         case '×':
         case '÷':
+            decPointBtn.disabled = false;
             handleMath(symbol);
             break;
 
@@ -157,6 +174,39 @@ opBtns.forEach(btn => {
     })
 })
 
+
+
+document.addEventListener('keydown', function(e) {
+    switch(e.key){
+        case '+':
+            addBtn.click();
+            break;
+        case '-':
+            subBtn.click();
+            break;
+        case '*':
+            mulBtn.click();
+            break;
+        case '/':
+            divBtn.click();
+            break;
+        case 'c':
+            clearBtn.click();
+            break;
+        case 'Alt':
+            signChangeBtn.click();
+            break;
+        case 'Backspace':
+            backspaceBtn.click();
+            break;
+        case ',':
+        case '.':
+            decPointBtn.click();
+            break;
+    }
+})
+
+
 function changeColor(btn, color, bgColor, time) {
     btn.style.transition = `color ${time}s, background-color ${time}s`;
     btn.style.color = color;
@@ -177,6 +227,11 @@ eqBtn.addEventListener('click', () => {
     })
 })
 
+document.addEventListener('keydown', function (e){
+    if(e.key === 'Enter')
+        eqBtn.click();
+})
+
 const NUMBERS_COLOR = 'white';
 const NUMBERS_BG_COLOR = '#606060';
 const NUMBERS_BG_COLOR_EFFECT = '#E0E0E0';
@@ -191,6 +246,11 @@ numBtns.forEach(btn => {
             changeColor(btn, NUMBERS_COLOR, NUMBERS_BG_COLOR, 1);
         }, 400);
 
+    })
+
+    document.addEventListener('keydown', function (e) {
+        if(e.key === btn.textContent)
+            btn.click();
     })
 })
 
