@@ -35,8 +35,6 @@ function symbolHandler(symbol){
                 buffer = buffer.substring(1, buffer.length);
             }
 
-            console.log(operator);
-
             if(operator !== undefined){
                 calcBuffer = calcBuffer.split(`${operator}`);
                 calcBuffer[calcBuffer.length -1] = operator + buffer;
