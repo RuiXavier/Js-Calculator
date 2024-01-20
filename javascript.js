@@ -28,6 +28,25 @@ function buttonPress(content){
 
 function symbolHandler(symbol){
     switch(symbol){
+        case '+/-':
+            if(buffer.charAt(0) !== '-')
+                buffer = '-' + buffer;
+            else {
+                buffer = buffer.substring(1, buffer.length);
+            }
+
+            console.log(operator);
+
+            if(operator !== undefined){
+                calcBuffer = calcBuffer.split(`${operator}`);
+                calcBuffer[calcBuffer.length -1] = operator + buffer;
+                calcBuffer = calcBuffer.join('');
+            }    
+            else{
+                calcBuffer = buffer;
+            }
+            
+            break;
         case '←':
             if(buffer.length === 1){
                 buffer = '0';
