@@ -40,8 +40,8 @@ function buttonPress(content){
 
 function symbolHandler(symbol){
     switch(symbol){
-        case '+/-':
-            if(buffer.charAt(0) !== '-')
+        case '+/-':   
+            if(String(buffer).charAt(0) !== '-')
                 buffer = '-' + buffer;
             else {
                 buffer = buffer.substring(1, buffer.length);
@@ -89,6 +89,7 @@ function symbolHandler(symbol){
             operator = null;
             buffer = result;
             result = 0;
+            decPointBtn.disabled = false;
             calcBuffer += symbol + buffer;
             clean = true;
             break;
