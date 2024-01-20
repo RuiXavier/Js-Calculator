@@ -47,7 +47,7 @@ function symbolHandler(symbol){
                 buffer = buffer.substring(1, buffer.length);
             }
 
-            if(operator !== undefined){
+            if(operator !== undefined && operator !== null){
                 calcBuffer = calcBuffer.split(`${operator}`);
                 calcBuffer[calcBuffer.length -1] = operator + buffer;
                 calcBuffer = calcBuffer.join('');

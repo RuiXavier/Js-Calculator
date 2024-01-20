@@ -13,6 +13,11 @@ body {
     background-color: black;
 }
 
+body > * {
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
 .container {
     display: flex;
     flex-direction: column;
