@@ -72,7 +72,7 @@ button {
     font-size: 1.5rem;
 }
 
-.op-btn {
+.op-btn, .eq-btn {
     background-color: #FF9933;
     color: white;
     font-size: 2.5rem;
