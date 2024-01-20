@@ -30,7 +30,11 @@ function buttonPress(content){
     display.textContent = buffer;
     if(clean === true){
         clean = false;
-        calcs.textContent = calcBuffer;
+        if(typeof buffer !== 'string')
+            calcs.textContent = calcBuffer;
+        else{
+            calcs.textContent = '';
+        }
         calcBuffer = buffer;
     } else{
         calcs.textContent = calcBuffer;
@@ -90,7 +94,10 @@ function symbolHandler(symbol){
             buffer = result;
             result = 0;
             decPointBtn.disabled = false;
-            calcBuffer += symbol + buffer;
+
+            if(typeof buffer !== 'string')
+                calcBuffer += symbol + buffer;
+
             clean = true;
             break;
         case '+':
@@ -130,7 +137,10 @@ function flushOperation(num){
     else if(operator === '×')
         result *= num;
     else if(operator === '÷')
-        result /= num;
+        if(num !== 0)
+            result /= num;
+        else
+            result = `Can't divide by 0`;
 }
 
 function numberHandler(number){

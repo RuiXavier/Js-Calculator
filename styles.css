@@ -28,7 +28,7 @@ body {
 .screen {
     display: flex;
     justify-content: space-between;
-    width: 95%;
+    width: 100%;
 }
 
 .calculations {
@@ -41,6 +41,7 @@ body {
 .display {
     font-family: 'Poppins', sans-serif;
     display: flex;
+    flex-wrap: nowrap;
     color: white;
     
     margin-top: auto;
